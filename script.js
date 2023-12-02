@@ -1,10 +1,18 @@
 $(document).ready(function ($) {
     "use strict";
 
-    WebGLSampler.registerPlugin(ScrollTringger);
+    jQuery(".menu-toggle").click(function () {
+        jQuery(".main-navigaion").toggleClass("toggled")
+    });
 
-    let elementFirst = document.querySelector('.site-header');
-    ScrollTringger.create({
+    jQuery(".header-menu ul li a").click(function () {
+        jQuery(".main-navigaion").removeClass("toggled")
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    var elementFirst = document.querySelector('.site-header');
+    ScrollTrigger.create({
         trigger : "body",
         start : "30px top",
         end : "bottom bottom",
